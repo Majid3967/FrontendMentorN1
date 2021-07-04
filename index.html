@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Stats preview card component</title>
 
@@ -16,6 +19,7 @@
     *{
       margin: none;
       padding: none;
+      font-family: 'Inter', sans-serif;
     }
     body{
       background-color: hsl(233, 47%, 7%);
@@ -27,30 +31,105 @@
     #main{
       background-color: hsl(244, 38%, 16%);
       border-radius: 10px;
-      margin: 40px 10px;
+      margin: 100px 20px;
       display: flex;
       flex-wrap: nowrap;
       flex-flow: column;
     }
-    #main img{
-      border-radius: 10px;
-      background:  linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45))
-      
+    .image{
+      background:url('./images/image-header-desktop.jpg') no-repeat;
+      background-size: contain;
+      height: auto;
+      width: auto;
+      border-radius: 10px 10px 0 0;
+    }
+    .overlay{
+      background: hsl(277, 64%, 61%);
+      height: 36.6vh;
+      width: auto;
+      opacity: 0.5;
+      border-radius: 10px 10px 0 0;
+    }
+
+    h1{
+      text-align: center;
+      color: hsl(0, 0%, 100%);
+      margin: 40px 20px;
+    }
+    h1 span{
+      color: hsl(277, 64%, 61%);;
+    }
+    p{
+      text-align: center;
+      color: hsla(0, 0%, 100%, 0.75);
+      margin: 40px 30px;
+      line-height: 30px;
+    }
+    .footer div{
+      margin: 40px;
+    }
+    .footer h1{
+      margin: 0;
+      text-transform: uppercase;
     }
     
+    .footer p{
+      margin: 0;
+      text-transform: uppercase;
+    }
+    @media screen and (min-width: 719px) {
+      #main{
+      flex-flow: row-reverse;
+      margin: 180px 80px;
+    }
+    .footer{
+      display: flex;
+      flex: row;
+      margin: 100px 20px 10px 22px;
+    }
+    .image{
+      height: 540px;
+      width: 100%;
+      border-radius: 0 10px 10px 0;
+    }
+    .overlay{
+      height: 100%;
+      width: 100%;
+      border-radius: 0 10px 10px 0;
+    }
+    h1{
+      text-align: left;
+      margin: 80px 180px 20px 70px;
+    }
+    p{
+      text-align: left;
+      margin: 40px 180px 20px 70px;
+    }
+  
+    
+    }
+
   </style>
 </head>
 <body>
 <div id = "main">
-  <img src="./images/image-header-desktop.jpg">
-  <h1>Get insights that help your business grow.</h1>
+  <div class = "image">
+    <div class="overlay"></div>
+  </div>
+  <div>
+    <h1>Get <span>insights</span> that help your business grow.</h1>
 
   <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer 
   experience, and overall efficiency.</p>
 
-  10k+ companies
-  314 templates
-  12m+ queries
+  <div class = "footer">
+    <div><h1>10k+</h1><p>companies</p> </div>
+    <div><h1>314</h1><p>templates</p></div> 
+    <div><h1>12m+</h1><p>queries</p></div> 
+  </div>
+  </div>
+  
+  
 </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
